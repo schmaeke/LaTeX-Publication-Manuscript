@@ -1,0 +1,53 @@
+% Loading the document class ------------------------------------------------- %
+\documentclass{pubmanuscript}
+
+
+% Set general document information ------------------------------------------- %
+\title{A Paper about Very Important Stuff I Want To Publish}
+
+\author[1]{Jason Miller\thanks{\maillink{jason.miller@inst.univ.tld} Corresponding author}}
+\author[1]{Mark Tucker}
+\author[2]{Gerry Brown}
+
+\affil[1]{
+	Chair for Cool Simulation and Colorful Pictures,
+	Random University Berlin,
+	Somestr. 22, 54321 Berlin, Germany
+}
+
+\affil[2]{
+	Institute for Exciting Experiments,
+	Another University Hamburg,
+	Funnystr. 923, 97543 Hamburg, Germany
+}
+
+\date{\today}
+
+
+% Loading additional packages ------------------------------------------------ %
+\usepackage[english]{babel} % use 'ngerman' instead of 'english' for german
+\usepackage{blindtext}
+
+
+\begin{document} % Start of the acutal document ------------------------------ %
+
+	\maketitle % Create the title page
+	\abstractAndKeywords{
+		\blindtext[2]
+	}{
+		Finite Element Method\sep Solid Mechanics\sep Local Refinements\sep Neural Networks
+	}
+
+	\clearpage % Clear next page
+	\pagestyle{fancy}
+
+	\tableofcontents % Create table of contents
+	\clearpage % Clear next page
+
+	\input{content/introduction/main.tex}
+	\input{content/example/main.tex}
+	\input{content/conclusion/main.tex}
+
+	\bibliography{references/references.bib}
+
+\end{document} % End of the document ----------------------------------------- %
